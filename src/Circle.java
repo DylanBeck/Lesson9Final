@@ -18,15 +18,20 @@ public class Circle implements Shape {
     }
 
     public double area() {
-        return Math.PI*radius*radius;
+        return Math.PI * radius * radius;
     }
 
     public void draw(Pen p) {
+        double side = 2.0*Math.PI*
         p.up();
         p.move(xPos, xPos);
         p.down();
-        p.setDirection(0);
-    //    p.move(width);
+        p.setDirection(90);
+        for (int i = 1; i < 120; i++) {
+            p.move(side);
+            p.turn(3);
+        }
+
     }
 
     public double getXPos() {
@@ -38,18 +43,19 @@ public class Circle implements Shape {
     }
 
     public void move(double xLoc, double yLoc) {
-        xPos=xLoc;
-        yPos=yLoc;
+        xPos = xLoc;
+        yPos = yLoc;
     }
 
     public void stretchBy(double factor) {
-        radius *=factor;
+        radius *= factor;
     }
-    public String toString(){
-        String str= "This is a CIRCLE\n";
-        str+="XLOC: "+xPos+ "\tYLOC: "+yPos+"\n";
-        str+="RADIUS: "+radius +"\n";
-        str+="AREA: "+ area();
+
+    public String toString() {
+        String str = "This is a CIRCLE\n";
+        str += "XLOC: " + xPos + "\tYLOC: " + yPos + "\n";
+        str += "RADIUS: " + radius + "\n";
+        str += "AREA: " + area();
         return str;
     }
 

@@ -14,7 +14,7 @@ public class Circle implements Shape {
     public Circle(double x, double y, double r) {
         xPos = 0;
         yPos = 0;
-        radius = 1;
+        radius = r;
     }
 
     public double area() {
@@ -22,12 +22,12 @@ public class Circle implements Shape {
     }
 
     public void draw(Pen p) {
-        double side = 2.0*Math.PI*
+        double side = 2.0*Math.PI*radius/120;
         p.up();
-        p.move(xPos, xPos);
+        p.move(xPos +radius , xPos-side/2.0);
         p.down();
         p.setDirection(90);
-        for (int i = 1; i < 120; i++) {
+        for (int i = 0; i < 120; i++) {
             p.move(side);
             p.turn(3);
         }

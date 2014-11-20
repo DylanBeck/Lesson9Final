@@ -3,7 +3,7 @@ import TurtleGraphics.Pen;
 
 public class Circle extends AbstractShape {
 
-    private double radius;
+    protected double radius;
 
     public Circle() {
         super();

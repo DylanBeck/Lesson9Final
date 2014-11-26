@@ -17,7 +17,7 @@ abstract public class AbstractShape implements Shape {
     public final double getYPos(){
         return yPos;
     }
-    public final void move(double xLoc, double yLoc){
+    public void move(double xLoc, double yLoc){
         xPos = xLoc;
         yPos = yLoc;
     }

@@ -18,6 +18,9 @@ public class Circle extends AbstractShape {
     public double area() {
         return Math.PI * radius * radius;
     }
+    public double perimeter(){
+        return Math.PI * (radius*2);
+    }
         public void stretchBy(double factor) {
         radius *= factor;
     }
@@ -38,6 +41,7 @@ public class Circle extends AbstractShape {
     public String toString() {
         String str = "This is a CIRCLE\n";
         str += "RADIUS: " + radius + "\n";
+        str+= "PERIMETER: "+ perimeter();
         str += "\n"+super.toString();
         return str;
     }

@@ -1,33 +1,41 @@
 
 import TurtleGraphics.Pen;
 
-//private double x, x1, x2, y, y1, y2, y3;
-
 public class Triangle extends AbstractShape {
-    private double x, x1, x2, y, y1, y2, y3;
+    private double x3, x2, y2, y3;
 
        public Triangle(){
            super();
            
        }
     public double area() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return Math.abs((xPos*y2-x2*yPos) + (x2*y3-x3*y2)+ (x3*yPos-xPos*y3)) /2;  
     }
 
     public double perimeter() {
-        return Math.sqrt((x1 - x2) + (x1 - x2) + (y1 - y2) * (y1 - y2));
+        return Math.sqrt((xPos - x2) + (xPos - x2) + (yPos - y2) * (yPos - y2));
     }
 
     public void draw(Pen p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        p.up();
+        p.move(xPos,yPos);
+        p.down();
+        p.move(x2,y2);
+        p.move(x3,y3);
+        p.move(xPos,yPos);
     }
 
     public void stretchBy(double factor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        x2=(x2-xPos) * factor + xPos;
+        y2=(y2-yPos) * factor + yPos;
+        x3=(x3-xPos) * factor + xPos;
+        y3=(y3-yPos) * factor + yPos;
+       
     }
 
     public void move(double xLoc, double yLoc) {
         xPos = xLoc;
         yPos = yLoc;
+        x2=(x2-xPos);
     }
 }

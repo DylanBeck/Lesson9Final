@@ -1,21 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import javax.swing.JOptionPane;
+import java.text.NumberFormat;
 
-/**
- *
- * @author dyla1920
- */
 public class EmployeeGUI extends javax.swing.JDialog {
+Employee emp[];
+int size =0;
+NumberFormat nf;
 
-    /**
-     * Creates new form EmployeeGUI
-     */
-    public EmployeeGUI(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public EmployeeGUI() {
         initComponents();
+        emp = new Employee[10];
+        nf=NumberFormat.getCurrencyInstance();
     }
 
     /**
@@ -205,15 +199,28 @@ public class EmployeeGUI extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
-        String choice = buttonGroup1.getSelection().getActionCommand();
-        //put choice in table
-        tblemployee.setValueAt(choice, 0,1);
-        tblemployee.setValueAt("You Chose", 0,0);
+        Employee temp;
+        String nm, type;
+        int hours;
+        double rate;
+        try{
+                nm = txtname.getText();
+                hours = Integer.parseInt(txthours.getText());
+                rate = Double.parseDouble(txtrate.getText());
+                type = buttonGroup1.getSelection().getActionCommand();
+        }catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(this, "Must fill out form correctly");
+            return ; 
+        }
+        if(type.equals("FT"))
+            temp = new FullTimeEmployee();
+        else
+            temp = new PartTimeEmployee();
+        
     }//GEN-LAST:event_btnaddActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+        
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

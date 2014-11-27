@@ -217,6 +217,13 @@ NumberFormat nf;
             temp = new FullTimeEmployee();
         else
             temp = new PartTimeEmployee();
+        if (temp.setName(nm) && temp.setHours(hours) &&temp.setRate(rate));
+        {
+            emp[size] = temp;
+            tblemployee.setValueAt(temp.getName(), size, 0);
+            size ++;
+            lbltotal.setText(nf.format(Employee.getTotalPay()));
+        }
         
     }//GEN-LAST:event_btnaddActionPerformed
 

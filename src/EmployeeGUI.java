@@ -222,7 +222,7 @@ NumberFormat nf;
             emp[size] = temp;
             tblemployee.setValueAt(temp.getName(), size, 0);
             size ++;
-            lbltotal.setText(nf.format(Employee.getTotalPay()));
+            //lbltotal.setText(nf.format(Employee.getTotalPay()));
         }
         
     }//GEN-LAST:event_btnaddActionPerformed
@@ -255,7 +255,7 @@ NumberFormat nf;
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                EmployeeGUI dialog = new EmployeeGUI(new javax.swing.JFrame(), true);
+                EmployeeGUI dialog = new EmployeeGUI();
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

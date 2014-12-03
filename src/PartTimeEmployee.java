@@ -6,6 +6,7 @@ public class PartTimeEmployee extends Employee {
         LOW_HOURS=1;
     }
     public double getPay(){
+      //  totalPay +=LOW_HOURS*LOW_RATE;
         return (LOW_HOURS*LOW_RATE);
     }
 }

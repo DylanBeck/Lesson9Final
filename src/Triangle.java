@@ -6,8 +6,16 @@ public class Triangle extends AbstractShape {
 
        public Triangle(){
            super();
-           
+           x2 = 50;
+           y2 = 50;
+           x3 = 100;
+           y3 = 0;
        }
+     //  public Triangle(double xPos, double yPos){
+         //  super(xPos,yPos);
+       //}
+           
+
     public double area() {
         return Math.abs((xPos*y2-x2*yPos) + (x2*y3-x3*y2)+ (x3*yPos-xPos*y3)) /2;  
     }

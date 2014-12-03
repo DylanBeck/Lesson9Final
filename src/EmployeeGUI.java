@@ -222,11 +222,19 @@ NumberFormat nf;
             emp[size] = temp;
             tblemployee.setValueAt(temp.getName(), size, 0);
             size ++;
-            //lbltotal.setText(nf.format(Employee.getTotalPay()));
+            lbltotal.setText(nf.format(Employee.getTotalPay()));
+            clearform();
+            return;
         }
         
     }//GEN-LAST:event_btnaddActionPerformed
-
+    public void clearform()
+    {
+        txtname.setText("");
+        txtrate.setText("");
+        txthours.setText("");
+        buttonGroup1.clearSelection();
+    }
         
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

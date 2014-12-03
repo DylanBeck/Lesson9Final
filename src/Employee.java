@@ -1,15 +1,18 @@
 
-public class Employee {
+public abstract class Employee {
 
-    private String name;
-    private double rate;
-    private int hours;
-    protected double totalpay = 0;
+    protected String name;
+    protected double rate;
+    protected int hours;
+    protected static double totalpay = 0;
 
     public Employee() {
         name = "";
         rate = 0;
         hours = 0;
+    }
+    public static double getTotalPay(){
+        return totalpay;
     }
 
     public boolean setName(String nm) {
@@ -62,4 +65,5 @@ public class Employee {
         return "between 1 and 60, inclusive";
     }
 
+    public abstract double getPay();
 }

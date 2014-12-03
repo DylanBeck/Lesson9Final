@@ -198,10 +198,9 @@ AbstractShape s;
     }//GEN-LAST:event_btnRectActionPerformed
 
     private void btnresizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnresizeActionPerformed
-     double x = Double.parseDouble(JOptionPane.showInputDialog(this,"Enter new x","0"));
-     double y = Double.parseDouble(JOptionPane.showInputDialog(this,"Enter new y","0"));
+     double f = Double.parseDouble(JOptionPane.showInputDialog(this,"Enter new factor to stretch by","0"));
      erase();
-     s.move(x, y);
+     s.stretchBy(f);
      s.draw(p);
      txtinfo.setText(s.toString());
     }//GEN-LAST:event_btnresizeActionPerformed

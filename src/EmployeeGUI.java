@@ -56,6 +56,11 @@ NumberFormat nf;
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("Full Time");
         jRadioButton1.setActionCommand("FT");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -86,6 +91,11 @@ NumberFormat nf;
         });
 
         btnquit.setText("Quit");
+        btnquit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnquitActionPerformed(evt);
+            }
+        });
 
         tblemployee.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -228,6 +238,14 @@ NumberFormat nf;
         }
         
     }//GEN-LAST:event_btnaddActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void btnquitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnquitActionPerformed
+    System.exit(0);     // TODO add your handling code here:
+    }//GEN-LAST:event_btnquitActionPerformed
     public void clearform()
     {
         txtname.setText("");
